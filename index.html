@@ -1,13 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoichoi - Premium Bengali Entertainment</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/client/src/main.tsx"></script>
-  </body>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">hoichoi</a>
+                </div>
+                
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="movies.html">Movies</a></li>
+                        <li><a href="series.html">Web Series</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <form id="search-form">
+                            <input type="search" placeholder="Search...">
+                            <button type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <button class="icon-button">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    
+                    <div class="dropdown">
+                        <button class="icon-button" id="profile-dropdown-toggle">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <div class="dropdown-menu" id="profile-dropdown-menu">
+                            <div class="dropdown-header">My Account</div>
+                            <a href="#" class="dropdown-item">Profile</a>
+                            <a href="#" class="dropdown-item">Watchlist</a>
+                            <a href="#" class="dropdown-item">Subscription</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">Logout</a>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mobile-menu" id="mobile-menu">
+                <form id="mobile-search-form" class="mobile-search">
+                    <input type="search" placeholder="Search...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                
+                <nav class="mobile-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="movies.html">Movies</a></li>
+                        <li><a href="series.html">Web Series</a></li>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">Watchlist</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slides" id="hero-slides">
+                <!-- Slides will be inserted by JavaScript -->
+            </div>
+            
+            <div class="carousel-indicators" id="carousel-indicators">
+                <!-- Indicators will be inserted by JavaScript -->
+            </div>
+            
+            <button class="carousel-control carousel-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-control carousel-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Trending Now -->
+            <section class="content-row">
+                <div class="row-header">
+                    <h2>Trending Now</h2>
+                    <a href="categories.html?type=trending" class="view-all">View All</a>
+                </div>
+                
+                <div class="row-container">
+                    <button class="scroll-arrow scroll-left">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="content-slider" id="trending-slider">
+                        <!-- Content cards will be inserted by JavaScript -->
+                    </div>
+                    
+                    <button class="scroll-arrow scroll-right">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Popular Web Series -->
+            <section class="content-row">
+                <div class="row-header">
+                    <h2>Popular Web Series</h2>
+                    <a href="categories.html?type=series" class="view-all">View All</a>
+                </div>
+                
+                <div class="row-container">
+                    <button class="scroll-arrow scroll-left">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="content-slider" id="series-slider">
+                        <!-- Content cards will be inserted by JavaScript -->
+                    </div>
+                    
+                    <button class="scroll-arrow scroll-right">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- New Releases -->
+            <section class="content-row">
+                <div class="row-header">
+                    <h2>New Releases</h2>
+                    <a href="categories.html?type=new" class="view-all">View All</a>
+                </div>
+                
+                <div class="row-container">
+                    <button class="scroll-arrow scroll-left">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="content-slider" id="new-releases-slider">
+                        <!-- Content cards will be inserted by JavaScript -->
+                    </div>
+                    
+                    <button class="scroll-arrow scroll-right">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Promo Section -->
+            <section class="promo-section">
+                <div class="promo-content">
+                    <span class="subtitle">LIMITED TIME OFFER</span>
+                    <h2>Premium Plan at 50% Off</h2>
+                    <p>Watch unlimited movies, series, and exclusive originals with no ads. Available for a limited time only.</p>
+                    <button class="btn btn-primary" id="promo-btn">Subscribe Now</button>
+                </div>
+                <div class="promo-image">
+                    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80" alt="Premium Offer">
+                </div>
+            </section>
+            
+            <!-- Hoichoi Originals -->
+            <section class="content-row">
+                <div class="row-header">
+                    <h2>Hoichoi Originals</h2>
+                    <a href="categories.html?type=originals" class="view-all">View All</a>
+                </div>
+                
+                <div class="row-container">
+                    <button class="scroll-arrow scroll-left">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="content-slider" id="originals-slider">
+                        <!-- Content cards will be inserted by JavaScript -->
+                    </div>
+                    
+                    <button class="scroll-arrow scroll-right">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>hoichoi</h2>
+                    <p>Bengal's largest entertainment platform with over 2000+ movies, exclusive original shows, and music videos.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h3>Help</h3>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Devices</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h3>Get The App</h3>
+                        <div class="app-badges">
+                            <a href="#">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1280px-Download_on_the_App_Store_Badge.svg.png" alt="Download on App Store">
+                            </a>
+                            <a href="#">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1280px-Google_Play_Store_badge_EN.svg.png" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Hoichoi. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal" id="content-detail-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="modal-body" id="content-detail-body">
+                    <!-- Content details will be inserted by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="video-player-modal">
+        <div class="modal-dialog modal-large">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="modal-body" id="video-player-body">
+                    <!-- Video player will be inserted by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <h4 class="toast-title">Title</h4>
+            <p class="toast-message">Message</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="mockData.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
